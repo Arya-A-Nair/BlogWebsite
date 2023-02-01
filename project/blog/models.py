@@ -16,12 +16,14 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    title=models.TextField()
+    title=models.TextField(name="title")
+    created_at=models.DateTimeField(auto_now_add=True,name="created_at")
     authorName=models.ForeignKey(User,related_name="created_by",on_delete=models.DO_NOTHING)
     description=models.TextField()
     category=models.ManyToManyField(Category,related_name='categories')
     content=models.TextField()
     views=models.IntegerField(default=0)
+    
     def __str__(self):
         return self.title
     
