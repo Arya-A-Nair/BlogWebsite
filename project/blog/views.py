@@ -12,7 +12,7 @@ def get_TopBlogs(request):
     Blogs=Blog.objects.order_by('-views')
     serializer=BlogShortSerializer(Blogs,many=True)
     if len(serializer.data)>5:
-        return Response(serializer.data[5])
+        return Response(serializer.data[:5])
     return Response(serializer.data)
     
 @api_view(['GET'])
@@ -21,7 +21,7 @@ def get_RecentBlogs(request):
     Blogs=Blog.objects.order_by('-created_at')
     serializer=BlogShortSerializer(Blogs,many=True)
     if len(serializer.data)>5:
-        return Response(serializer.data[5])
+        return Response(serializer.data[:5])
     return Response(serializer.data)
 
 
@@ -39,10 +39,29 @@ def getDetailedBlog(request):
 def AddBlog(request):
     user=request.user
     categoryList=request.data['category']
+    for i in categoryList:
+        if not Category.objects.filter(name__contains=i).exists():
+            Category.objects.create(name=i)
+    blog=Blog.objects.create(title=request.data['title'],description=request.data['description'],authorName=user,content=request.data['content'])
     category=Category.objects.filter(name__in=categoryList)
-    print(category)
-    blog=Blog.objects.create(title=request.data['title'],description=request.data['description'],authorName=user)
     blog.category.set(category)
     blog.save()
     serializer=BlogDetailSerializer(blog,many=False)
     return Response(serializer.data)
+
+
+@api_view(['POST'])
+@permission_classes((permissions.IsAuthenticated,))
+def updateBlog(request):
+    user=request.user
+    blog_id=request.data['blog_id']
+    blog=Blog.objects.get(id=blog_id)
+    if blog.authorName==user:    
+        blog.title=request.data['title']
+        blog.description=request.data['description']
+        blog.content=request.data['content']
+        blog.save()
+        return Response({"status":True})
+    else:
+        return Response({"message":"You are not authorized to access this team"},status=401)
+
