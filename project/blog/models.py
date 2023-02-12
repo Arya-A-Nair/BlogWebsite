@@ -23,7 +23,11 @@ class Blog(models.Model):
     category=models.ManyToManyField(Category,related_name='categories')
     content=models.TextField()
     views=models.IntegerField(default=0)
+    image=models.ImageField(upload_to='title_image/')
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        ordering=['-created_at']
     

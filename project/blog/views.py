@@ -11,8 +11,8 @@ from .serializer import BlogShortSerializer, BlogDetailSerializer
 def get_TopBlogs(request):
     Blogs=Blog.objects.order_by('-views')
     serializer=BlogShortSerializer(Blogs,many=True)
-    if len(serializer.data)>5:
-        return Response(serializer.data[:5])
+    if len(serializer.data)>6:
+        return Response(serializer.data[:6])
     return Response(serializer.data)
     
 @api_view(['GET'])
@@ -20,8 +20,8 @@ def get_TopBlogs(request):
 def get_RecentBlogs(request):
     Blogs=Blog.objects.order_by('-created_at')
     serializer=BlogShortSerializer(Blogs,many=True)
-    if len(serializer.data)>5:
-        return Response(serializer.data[:5])
+    if len(serializer.data)>6:
+        return Response(serializer.data[:6])
     return Response(serializer.data)
 
 
