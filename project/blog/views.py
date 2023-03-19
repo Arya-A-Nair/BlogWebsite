@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view,permission_classes
 from .models import Blog,Category
 from .serializer import BlogShortSerializer, BlogDetailSerializer
+from rest_framework.pagination import PageNumberPagination
+
 
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny,))
@@ -64,4 +66,21 @@ def updateBlog(request):
         return Response({"status":True})
     else:
         return Response({"message":"You are not authorized to access this team"},status=401)
+
+
+
+
+class BlogPagination(PageNumberPagination):
+    page_size = 1
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
+@api_view(['GET'])
+@permission_classes((permissions.IsAuthenticated,))
+def BlogList(request):
+    blogs=Blog.objects.order_by('created_at')
+    paginator=BlogPagination()
+    paginated_blogs=paginator.paginate_queryset(blogs, request)
+    serializer=BlogShortSerializer(paginated_blogs,many=True)
+    return paginator.get_paginated_response(serializer.data)
 
