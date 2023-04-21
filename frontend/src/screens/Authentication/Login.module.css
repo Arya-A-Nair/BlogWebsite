@@ -1,0 +1,66 @@
+:root {
+	--primary: #16171a;
+	--secondary: #202226;
+	--fontColor: #d7e2ff;
+}
+
+.container {
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	min-width: 30%;
+}
+.container2 {
+	background-color: var(--secondary);
+	position: relative;
+	padding: 3rem 0.5rem;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container2 > img {
+	width: 10rem;
+	background-color: var(--secondary);
+	border-radius: 50%;
+}
+.container2 > h6 {
+	font-size: 3rem;
+}
+.inputContainer {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-items: center;
+	align-item: center;
+	margin: 3rem 2rem;
+}
+
+.inputContainer > input {
+	display: block;
+	width: 80%;
+	margin: 0 0 20px;
+	padding: 8px 12px 10px 12px;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.25);
+	font-family: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	color: var(--fontColor);
+}
+
+.container2 > button {
+	background-color: var(--primary);
+	border-radius: 16px;
+	padding: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+	.container {
+		width: 90%;
+	}
+}

@@ -1,0 +1,51 @@
+.image {
+	width: 100%;
+	height: 30vh;
+	border-radius: 1rem;
+	object-fit: cover;
+}
+.container {
+	margin: 2rem;
+	border-radius: 1rem;
+	/* width:100% */
+}
+
+.title {
+	font-size: 2rem;
+}
+.author {
+	font-size: 1.5rem;
+}
+.content {
+	padding: 1rem;
+	background-color: var(--secondary);
+	margin-top: 3rem;
+	border-radius: 1rem;
+}
+
+.category {
+	background-color: var(--secondary);
+	padding: 0.5rem;
+	border-radius: 32px;
+	width: max-content;
+}
+
+.categoryContainer {
+	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.creatorSupport {
+	margin-top: 2rem;
+}
+
+.loader {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

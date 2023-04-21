@@ -1,0 +1,28 @@
+.container {
+	width: 100%;
+	padding: 1vh;
+	margin-top: 5rem;
+	padding: 5rem 10%;
+	background-color: var(--secondary);
+}
+
+.containerHeader {
+	display: flex;
+	justify-content: space-between;
+}
+
+.container2 {
+	display: grid;
+	grid-template-columns: 1fr ;
+	margin-top: 20px;
+	background-color: transparent;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+@media screen and (min-width: 991px) {
+	.container2 {
+		flex-direction: row;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}

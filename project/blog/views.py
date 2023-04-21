@@ -27,7 +27,7 @@ def get_RecentBlogs(request):
     return Response(serializer.data)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 @permission_classes((permissions.AllowAny,))
 def getDetailedBlog(request):
     Blogs=Blog.objects.get(id=request.data['blog_id'])
@@ -76,7 +76,7 @@ class BlogPagination(PageNumberPagination):
     max_page_size = 100
 
 @api_view(['GET'])
-@permission_classes((permissions.IsAuthenticated,))
+@permission_classes((permissions.AllowAny,))
 def BlogList(request):
     blogs=Blog.objects.order_by('created_at')
     paginator=BlogPagination()
