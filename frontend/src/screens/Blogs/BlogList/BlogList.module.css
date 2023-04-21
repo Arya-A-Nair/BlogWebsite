@@ -1,0 +1,28 @@
+.container {
+	margin: 1rem;
+}
+.pageTitle {
+	font-size: 3rem;
+}
+
+.container2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+.pagination {
+	margin-top: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+	.container2 {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.pagination {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+}

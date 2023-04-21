@@ -1,18 +1,3 @@
-.container {
-	height: fit-content;
-	/* width: 40%; */
-	margin-right: 5rem;
-	padding: 1rem;
-	background-color: var(--primary);
-	border-radius: 32px;
-	cursor: grab;
-}
-.container > img {
-	object-fit: cover;
-	height: 10vh;
-	width: 100%;
-	border-radius: 32px;
-}
 .title {
 	font-size: 1.5rem;
 }
@@ -22,18 +7,14 @@
 }
 .description {
 	opacity: 0.4;
-	font-size: 0.8rem;
+	font-size: 1.3rem;
 }
 .categoryContainer {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 1rem;
 }
-.category {
-	background-color: var(--secondary);
-	padding: 0.5rem;
-	border-radius: 32px;
-}
+
 .category2 {
 	background-color: var(--primary);
 	padding: 0.5rem;
@@ -47,16 +28,40 @@
 	background-color: var(--secondary);
 	border-radius: 32px;
 	cursor: grab;
-}
-.container2 > img {
-	object-fit: cover;
-	height: 10vh;
+	display: flex;
+	height: 20vh;
+	gap: 1rem;
 	width: 100%;
+	justify-content: space-between;
+}
+
+.container2 > div > img {
+	object-fit: cover;
+	height: 100%;
+	aspect-ratio: 1/1;
+	/* width: 100%; */
 	border-radius: 32px;
+}
+.container2 > div {
+	display: flex;
+	gap: 2rem;
 }
 @media screen and (max-width: 991px) {
 	.container {
 		width: 100%;
 		margin-top: 1rem;
+	}
+	.container2 > div {
+		display: flex;
+		gap: 2rem;
+		flex-direction: column;
+	}
+	.container2 {
+		flex-direction: column;
+		height: max-content;
+	}
+	.container2 > div > img {
+		width: 100%;
+		height: 20%;
 	}
 }
