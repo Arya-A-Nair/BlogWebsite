@@ -8,6 +8,7 @@ import BlogListItem from "./BlogListItem";
 import { Box, Pagination } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
+let flag = 0;
 const BlogList = () => {
 	let ext = "blogs/getBlogList/";
 	const [data, setData] = useState([]);
@@ -16,6 +17,25 @@ const BlogList = () => {
 	const [searchValue, setSearchValue] = useState("");
 	const [searchCondition, setSearchCondition] = useState("title");
 	// console.log(searchParams.get("top"));
+
+	useEffect(() => {
+		setTimeout(() => {
+			if (result !== null) {
+				const tempData = [];
+				setSearchCondition("category");
+				setSearchValue(result);
+				orginialData.results?.forEach((item) => {
+					for (let i = 0; i < item.category.length; i++) {
+						if (item.category[i].name?.includes(searchValue)) {
+							tempData.push(item);
+						}
+					}
+				});
+				setData(tempData);
+			}
+		}, 2000);
+	}, [orginialData]);
+
 	useEffect(() => {
 		const getData = async () => {
 			axios
@@ -107,6 +127,9 @@ const BlogList = () => {
 					count={orginialData?.count}
 					color="primary"
 					onChange={handleChange}
+					sx={{
+						color: "#202226",
+					}}
 				/>
 			</div>
 		</div>

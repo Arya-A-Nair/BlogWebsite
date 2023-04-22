@@ -21,7 +21,10 @@ const PostItem = ({ item, alt = false }) => {
 				<div>
 					<div className={styles.title}>{item.title}</div>
 					<div className={styles.author}>{item.authorName} </div>
-					<div className={styles.description}>{item.description} </div>
+					<div className={styles.description}>
+						{item.description.slice(0, 26)}
+						{" ...."}
+					</div>
 					<div className={styles.categoryContainer}>
 						{item.category.map((x) => (
 							<div className={styles.category2}>{x.name}</div>

@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 10% 0;
+	margin: 5% 0;
 	flex-direction: column;
 }
 .section {
@@ -14,7 +14,7 @@
 }
 
 .section >div> h1 {
-	margin: 5vh 0;
+	margin: 20vh 0;
 	font-size: 2rem;
 }
 

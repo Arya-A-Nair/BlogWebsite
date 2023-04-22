@@ -7,14 +7,17 @@
 .container {
 	margin: 2rem;
 	border-radius: 1rem;
-	/* width:100% */
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .title {
 	font-size: 2rem;
 }
 .author {
-	font-size: 1.5rem;
+	font-size: 1.1rem;
+	font-style: italic;
 }
 .content {
 	padding: 1rem;
@@ -42,10 +45,22 @@
 	margin-top: 2rem;
 }
 
+.creatorSupport h1{
+	font-size: 1rem;
+}
+
 .loader {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.button{
+	font-size: 1rem;
+	font-style: italic;
+	text-decoration: underline;
+	cursor: pointer;
+	margin: 0rem 0.5rem;
 }

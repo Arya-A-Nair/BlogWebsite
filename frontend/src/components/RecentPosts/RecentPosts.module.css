@@ -4,6 +4,7 @@
 	margin-top: 5rem;
 	padding: 5rem 10%;
 	background-color: var(--secondary);
+	border-radius: 16px;
 }
 
 .containerHeader {
@@ -13,7 +14,7 @@
 
 .container2 {
 	display: grid;
-	grid-template-columns: 1fr ;
+	grid-template-columns: 1fr;
 	margin-top: 20px;
 	background-color: transparent;
 	justify-content: flex-start;
