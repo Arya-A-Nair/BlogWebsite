@@ -10,7 +10,9 @@ const PostItem = ({ item, alt = false }) => {
 			className={!alt?styles.container:styles.container2}
 			onClick={() => navigate(`/blogs/${item.id}`)}
 		>
-			<img src={`${url}${item.image}`} />
+			<img src={item.image != null
+							? `${url}${item.image}`
+							: "https://picsum.photos/200"} />
 			<div className={styles.title}>{item.title}</div>
 			<div className={styles.author}>{item.authorName} </div>
 			<div className={styles.description}>{item.description} </div>

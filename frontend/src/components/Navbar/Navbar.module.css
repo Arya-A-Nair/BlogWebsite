@@ -1,0 +1,42 @@
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navbar {
+	background-color: var(--secondary);
+	width: 20%;
+	/* height: 100vh; */
+	height: max-content;
+	min-height: 100vh;
+	position: static;
+	display: flex;
+	/* justify-content: center; */
+	padding: 1rem;
+	flex-direction: column;
+	align-items: center;
+}
+.navbar > h1 {
+	font-size: 3rem;
+}
+
+.navlinksContainer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding:1rem;
+	margin-top: 20%;
+}
+
+.navlink{
+    /* width:100%; */
+	justify-content: flex-start;
+	background-color: var(--primary);
+	margin:1rem 2rem;
+	padding:1rem 2rem;
+	border-radius: 16px;
+	display: flex;
+	cursor:pointer;
+}

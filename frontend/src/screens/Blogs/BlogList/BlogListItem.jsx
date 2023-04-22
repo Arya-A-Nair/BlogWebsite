@@ -5,13 +5,20 @@ import { url } from "../../../constants/baseUrl";
 import { useNavigate } from "react-router-dom";
 const PostItem = ({ item, alt = false }) => {
 	const navigate = useNavigate();
+	console.log(item);
 	return (
 		<div
 			className={styles.container2}
 			onClick={() => navigate(`/blogs/${item.id}`)}
 		>
 			<div>
-				<img src={`${url}${item.image}`} />
+				<img
+					src={
+						item.image != null
+							? `${url}${item.image}`
+							: "https://picsum.photos/200"
+					}
+				/>
 				<div>
 					<div className={styles.title}>{item.title}</div>
 					<div className={styles.author}>{item.authorName} </div>

@@ -45,11 +45,18 @@ const BlogDetails = () => {
 				<CircularProgress color="primary" determinate={false} size="lg" />
 			</div>
 		);
-	} 
+	}
 
 	return (
 		<div className={styles.container}>
-			<img src={`${url}${data.image}`} className={styles.image} />
+			<img
+				src={
+					data.image != null
+						? `${url}${data.image}`
+						: "https://picsum.photos/200"
+				}
+				className={styles.image}
+			/>
 			<div
 				style={{
 					marginTop: "1rem",
