@@ -3,6 +3,7 @@
 }
 .pageTitle {
 	font-size: 3rem;
+	margin-bottom: 1rem;
 }
 
 .container2 {
@@ -12,6 +13,32 @@
 }
 .pagination {
 	margin-top: 2rem;
+}
+.helperContainer {
+	width: 100%;
+	background-color: var(--secondary);
+	margin: 2rem 0;
+	padding: 1rem;
+	border-radius: 16px;
+
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+.helperContainer > input {
+	background-color: var(--primary);
+	font-size: 1.3rem;
+	border-radius: 16px;
+	padding: 1rem;
+	width: 70%;
+}
+.helperContainer > select {
+	background-color: var(--primary);
+	font-size: 1.3rem;
+	border-radius: 16px;
+	padding: 1rem;
+	width: 20%;
 }
 
 @media screen and (max-width: 991px) {

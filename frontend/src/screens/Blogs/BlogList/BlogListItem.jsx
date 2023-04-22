@@ -5,7 +5,6 @@ import { url } from "../../../constants/baseUrl";
 import { useNavigate } from "react-router-dom";
 const PostItem = ({ item, alt = false }) => {
 	const navigate = useNavigate();
-	console.log(item);
 	return (
 		<div
 			className={styles.container2}
