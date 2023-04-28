@@ -6,6 +6,7 @@
 	background-color: var(--primary);
 	border-radius: 32px;
 	cursor: grab;
+	margin-bottom: 1rem;
 }
 .container > img {
 	object-fit: cover;

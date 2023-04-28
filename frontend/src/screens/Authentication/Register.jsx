@@ -23,7 +23,8 @@ const Login = () => {
 			flag = true;
 			enqueueSnackbar("Check Password", { variant: "error" });
 		}
-		if (email.trim().length === 0) {
+		var emailRegex = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+		if (email.match(emailRegex)) {
 			flag = true;
 			enqueueSnackbar("Check Email", { variant: "error" });
 		}
@@ -32,12 +33,12 @@ const Login = () => {
 			enqueueSnackbar("Wallet not connnected", { variant: "error" });
 		}
 		if (flag) return;
-		let response = await axios.post(`${url}/api/auth/users/`, {
-			username: username,
-			password: password,
-			email: email,
-		});
-		console.log(response);
+		// let response = await axios.post(`${url}/api/auth/users/`, {
+		// 	username: username,
+		// 	password: password,
+		// 	email: email,
+		// });
+		// console.log(response);
 		enqueueSnackbar("Register successful", { variant: "success" });
 		navigate("/login");
 	};
@@ -65,6 +66,7 @@ const Login = () => {
 					<input
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
+						type="email"
 					></input>
 					<label>Password</label>
 					<input

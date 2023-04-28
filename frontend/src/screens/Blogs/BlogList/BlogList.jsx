@@ -124,7 +124,7 @@ const BlogList = () => {
 			</div>
 			<div className={styles.pagination}>
 				<Pagination
-					count={orginialData?.count}
+					count={orginialData?.count / 2}
 					color="primary"
 					onChange={handleChange}
 					sx={{

@@ -69,3 +69,26 @@
 	gap: 1rem;
 	padding: 1rem;
 }
+
+@media screen and (max-width: 991px) {
+	.titleBox {
+		padding: 1rem 1rem;
+		font-size: 0.8rem;
+	}
+	.titleBox > h1 {
+		margin-top: 1rem;
+	}
+	.container2 {
+		flex-direction: column;
+	}
+	.textAreaContainer {
+		width: 100%;
+		padding: 1rem 1rem;
+	}
+	.buttonGroup {
+		flex-direction: column;
+	}
+	.button {
+		width: 100%;
+	}
+}

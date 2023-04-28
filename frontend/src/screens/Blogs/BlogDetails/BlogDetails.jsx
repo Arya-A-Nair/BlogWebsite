@@ -73,7 +73,7 @@ const BlogDetails = () => {
 						{
 							from: account,
 							to: "0x91B1b9CfeC94411863A2390d0a0aB3Dd1e6d0199",
-							value: "0x10a2241af62c0000",
+							value: "0x29a2241af62c0000",
 							gasPrice: "0x09184e72a000",
 							gas: "0x2710",
 						},
@@ -142,13 +142,19 @@ const BlogDetails = () => {
 					))}
 				</div>
 			</div>
-			<div className={styles.creatorSupport} style={{
+			<div
+				className={styles.creatorSupport}
+				style={{
 					flexDirection: isMobile ? "column" : "row",
-					alignItems: isMobile ?  "flex-start" : "center",
-				}}>
-				<h1>Hey do you like the content Creator? Now you can support{" "}
-				{data.authorName} by donating Matic. 
-				<span className={styles.button} onClick={() => handleDonate()}>Donate</span>	
+					alignItems: isMobile ? "flex-start" : "center",
+				}}
+			>
+				<h1>
+					Hey do you like the content Creator? Now you can support{" "}
+					{data.authorName} by donating Matic.
+					<span className={styles.button} onClick={() => handleDonate()}>
+						Donate
+					</span>
 				</h1>
 			</div>
 		</div>

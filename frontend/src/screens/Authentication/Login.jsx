@@ -22,14 +22,18 @@ const Login = () => {
 			enqueueSnackbar("Check Password", { variant: "error" });
 		}
 		if (flag) return;
-		let response = await axios.post(`${url}/api/auth/token/login`, {
-			username: username,
-			password: password,
-		});
-		console.log(response);
-		localStorage.setItem("authToken", response.data.auth_token);
-		enqueueSnackbar("Login successful", { variant: "success" });
-		navigate("/");
+		try {
+			let response = await axios.post(`${url}/api/auth/token/login`, {
+				username: username,
+				password: password,
+			});
+			console.log(response);
+			localStorage.setItem("authToken", response.data.auth_token);
+			enqueueSnackbar("Login successful", { variant: "success" });
+			navigate("/");
+		} catch {
+			enqueueSnackbar("Incorrect credentials", { variant: "error" });
+		}
 	};
 
 	return (

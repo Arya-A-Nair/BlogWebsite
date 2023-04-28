@@ -37,6 +37,9 @@ const AddBlogScreen = () => {
 			enqueueSnackbar("Enter title", { variant: "error" });
 			return;
 		}
+		if (!connected) {
+			enqueueSnackbar("Connect Wallet", { variant: "error" });
+		}
 		axios.post(
 			`${url}blogs/addBlog/`,
 			{

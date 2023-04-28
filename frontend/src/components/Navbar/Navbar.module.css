@@ -39,6 +39,11 @@
 	display: flex;
 	cursor: pointer;
 	gap: 1rem;
+	transition: transform 500ms ease-in-out;
+}
+.navlink:hover {
+	transform: translate(-1rem, -1rem) scale(1.1);
+	box-shadow: 0.25rem 0.25rem var(--fontColor);
 }
 .mobileNav {
 	height: 100%;

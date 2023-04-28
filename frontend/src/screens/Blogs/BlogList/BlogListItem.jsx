@@ -5,6 +5,7 @@ import { url } from "../../../constants/baseUrl";
 import { useNavigate } from "react-router-dom";
 const PostItem = ({ item, alt = false }) => {
 	const navigate = useNavigate();
+	console.log(item);
 	return (
 		<div
 			className={styles.container2}
@@ -13,7 +14,7 @@ const PostItem = ({ item, alt = false }) => {
 			<div>
 				<img
 					src={
-						item.image != null
+						item.image !== null
 							? `${url}${item.image}`
 							: "https://picsum.photos/200"
 					}
